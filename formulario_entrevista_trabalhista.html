@@ -3,1039 +3,864 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulário de Entrevista — David Sitônio Advocacia</title>
+<title>Formulário de Entrevista Trabalhista — David Sitônio Advocacia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+:root{
+  --gold:#BB8646;
+  --gold-soft:#F5EDE2;
+  --graphite:#3B3B3B;
+  --stone:#655F58;
+  --ink:#26221E;
+  --paper:#FBF9F6;
+  --white:#FFFFFF;
+  --line:#E7DFD3;
+  --ok:#2E7D4F;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.55;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
 
-  :root {
-    --ouro: #BB8646;
-    --ouro-claro: #d4a76a;
-    --ouro-escuro: #8a6030;
-    --grafite: #2C2C2C;
-    --grafite-medio: #3f3f3f;
-    --grafite-claro: #6b6b6b;
-    --fundo: #F7F5F1;
-    --fundo-card: #FFFFFF;
-    --borda: #e0d8cc;
-    --erro: #b84040;
-    --ok: #3a7a4a;
-  }
+/* ---------- header ---------- */
+header{
+  background:var(--graphite);
+  color:var(--white);
+  padding:38px 18px 30px;
+  text-align:center;
+  border-bottom:4px solid var(--gold);
+}
+.brand{
+  font-family:'EB Garamond',serif;
+  font-size:2rem;
+  letter-spacing:.28em;
+  font-weight:600;
+  text-transform:uppercase;
+}
+.brand-sub{
+  color:var(--gold);
+  font-size:.68rem;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  margin-top:6px;
+}
+.brand-oab{color:#CFC8BE;font-size:.78rem;margin-top:14px;letter-spacing:.05em}
+.hero{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-top:none;
+  padding:28px 26px 26px;
+  border-radius:0 0 14px 14px;
+  margin-bottom:26px;
+}
+.hero h1{
+  font-family:'EB Garamond',serif;
+  font-size:1.7rem;
+  font-weight:700;
+  color:var(--graphite);
+  line-height:1.25;
+}
+.hero p{color:var(--stone);font-size:.95rem;margin-top:10px}
+.hero .req-note{margin-top:12px;font-size:.85rem;color:var(--stone)}
+.star{color:var(--gold);font-weight:700}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ---------- sections ---------- */
+section{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-left:4px solid var(--gold);
+  border-radius:12px;
+  padding:24px 22px 20px;
+  margin-bottom:22px;
+}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec-num{
+  font-family:'EB Garamond',serif;
+  color:var(--gold);
+  font-size:1.5rem;
+  font-weight:700;
+  min-width:34px;
+}
+.sec-head h2{
+  font-family:'EB Garamond',serif;
+  font-size:1.32rem;
+  font-weight:700;
+  color:var(--graphite);
+}
+.sec-desc{color:var(--stone);font-size:.88rem;margin-bottom:16px;padding-left:46px}
+@media(max-width:560px){.sec-desc{padding-left:0}}
 
-  body {
-    background: var(--fundo);
-    color: var(--grafite);
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-  }
+/* ---------- know-your-rights callout ---------- */
+.direito{
+  background:var(--gold-soft);
+  border:1px solid #E4D2B6;
+  border-radius:10px;
+  padding:13px 15px;
+  margin:14px 0 16px;
+  font-size:.87rem;
+  color:#5C4A2E;
+}
+.direito b{color:#8A6023}
+.direito .tag{
+  display:inline-block;
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--white);
+  background:var(--gold);
+  border-radius:99px;
+  padding:2px 10px 3px;
+  margin-bottom:6px;
+}
 
-  /* HEADER */
-  header {
-    background: #1a1a1a;
-    padding: 32px 24px 28px;
-    text-align: center;
-    border-bottom: 3px solid var(--ouro);
-  }
+/* ---------- fields ---------- */
+.field{margin-bottom:18px}
+label.q{
+  display:block;
+  font-weight:600;
+  font-size:.94rem;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+input[type=text],input[type=tel],input[type=email],input[type=date],input[type=time],textarea,select{
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid var(--line);
+  border-radius:9px;
+  font:inherit;
+  font-size:.95rem;
+  background:#FDFCFA;
+  color:var(--ink);
+}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
 
-  .logo-wrap {
-    margin-bottom: 8px;
-  }
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts.col{flex-direction:column}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{
+  display:block;
+  padding:9px 15px;
+  border:1.5px solid var(--line);
+  border-radius:99px;
+  font-size:.9rem;
+  color:var(--stone);
+  background:#FDFCFA;
+  cursor:pointer;
+  user-select:none;
+  transition:all .12s ease;
+}
+.opts.col .opt span{border-radius:10px}
+.opt input:checked + span{
+  background:var(--graphite);
+  border-color:var(--graphite);
+  color:var(--white);
+  font-weight:600;
+}
+.opt input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+.hint{font-size:.8rem;color:var(--stone);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
 
-  .logo-img {
-    width: 130px;
-    height: auto;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-  }
+/* ---------- consent + submit ---------- */
+.consent{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--gold-soft);
+  border:1px solid #E4D2B6;
+  border-radius:10px;padding:14px 15px;margin-bottom:20px;
+  font-size:.85rem;color:#5C4A2E;
+}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--gold);flex-shrink:0}
+.actions{display:flex;flex-direction:column;gap:10px}
+button{
+  font:inherit;cursor:pointer;border:none;border-radius:99px;
+  padding:16px 22px;font-weight:700;font-size:1rem;
+  transition:transform .1s ease, filter .15s ease;
+}
+button:active{transform:scale(.985)}
+.btn-wa{background:var(--gold);color:var(--white);letter-spacing:.02em}
+.btn-wa:hover{filter:brightness(1.06)}
+.btn-copy{background:var(--white);color:var(--graphite);border:1.5px solid var(--graphite)}
+.btn-copy:hover{background:#F3F1EE}
+.msg-erro{color:#B3352B;font-size:.88rem;font-weight:600;display:none;margin-bottom:12px}
+.msg-ok{color:var(--ok);font-size:.88rem;font-weight:600;display:none;margin-bottom:12px}
 
-  header .subtitulo-firma {
-    font-size: 11px;
-    color: #aaa;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  header .titulo-form {
-    margin-top: 20px;
-    font-family: 'EB Garamond', serif;
-    font-size: 28px;
-    color: #fff;
-    font-weight: 400;
-  }
-
-  header .instrucao {
-    margin-top: 10px;
-    color: #ccc;
-    font-size: 13.5px;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
-  }
-
-  /* CONTAINER */
-  .container {
-    max-width: 760px;
-    margin: 36px auto;
-    padding: 0 20px 60px;
-  }
-
-  /* SEÇÕES */
-  .secao {
-    background: var(--fundo-card);
-    border: 1px solid var(--borda);
-    border-top: 3px solid var(--ouro);
-    border-radius: 4px;
-    padding: 28px 30px;
-    margin-bottom: 28px;
-  }
-
-  .secao-titulo {
-    font-family: 'EB Garamond', serif;
-    font-size: 19px;
-    color: var(--ouro-escuro);
-    margin-bottom: 22px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--borda);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .secao-numero {
-    background: var(--ouro);
-    color: #fff;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  /* GRUPOS DE CAMPO */
-  .grupo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .grupo.full { grid-template-columns: 1fr; }
-  .grupo.tres { grid-template-columns: 1fr 1fr 1fr; }
-
-  .campo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 14px;
-  }
-
-  label {
-    font-size: 12.5px;
-    font-weight: 600;
-    color: var(--grafite-claro);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  label .obrigatorio { color: var(--ouro); margin-left: 2px; }
-
-  input[type="text"],
-  input[type="date"],
-  input[type="tel"],
-  input[type="email"],
-  input[type="number"],
-  select,
-  textarea {
-    border: 1px solid var(--borda);
-    border-radius: 3px;
-    padding: 10px 13px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: var(--grafite);
-    background: #fafaf8;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    width: 100%;
-  }
-
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--ouro);
-    box-shadow: 0 0 0 3px rgba(187,134,70,0.12);
-    background: #fff;
-  }
-
-  textarea { resize: vertical; min-height: 80px; }
-
-  /* RADIO / CHECKBOX */
-  .opcoes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 4px;
-  }
-
-  .opcao-btn {
-    display: none;
-  }
-
-  .opcao-label {
-    padding: 7px 16px;
-    border: 1.5px solid var(--borda);
-    border-radius: 20px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.18s;
-    color: var(--grafite-claro);
-    user-select: none;
-  }
-
-  .opcao-btn:checked + .opcao-label {
-    border-color: var(--ouro);
-    background: var(--ouro);
-    color: #fff;
-    font-weight: 600;
-  }
-
-  .opcao-label:hover {
-    border-color: var(--ouro-claro);
-    color: var(--ouro-escuro);
-  }
-
-  /* CHECKLIST DE DOCS */
-  .checklist {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 6px;
-  }
-
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 8px 12px;
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .check-item:hover { background: #faf5ec; }
-
-  .check-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--ouro);
-    flex-shrink: 0;
-  }
-
-  .check-item span {
-    font-size: 13px;
-    color: var(--grafite-medio);
-  }
-
-  /* AVISO */
-  .aviso {
-    background: #fdf8ee;
-    border: 1px solid #e8d5a8;
-    border-left: 4px solid var(--ouro);
-    border-radius: 3px;
-    padding: 12px 16px;
-    font-size: 13px;
-    color: var(--ouro-escuro);
-    margin-bottom: 20px;
-  }
-
-  /* BOTÃO */
-  .botao-wrap {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  button[type="submit"] {
-    background: var(--ouro);
-    color: #fff;
-    border: none;
-    padding: 15px 50px;
-    font-family: 'EB Garamond', serif;
-    font-size: 18px;
-    letter-spacing: 0.04em;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 2px 8px rgba(187,134,70,0.25);
-  }
-
-  button[type="submit"]:hover {
-    background: var(--ouro-escuro);
-    transform: translateY(-1px);
-  }
-
-  button[type="submit"]:active { transform: translateY(0); }
-
-  /* SUCESSO */
-  #mensagem-ok {
-    display: none;
-    background: var(--grafite);
-    color: #fff;
-    text-align: center;
-    padding: 40px 30px;
-    border-radius: 4px;
-    border-top: 3px solid var(--ouro);
-  }
-
-  #mensagem-ok .icone { font-size: 40px; margin-bottom: 12px; }
-  #mensagem-ok h2 { font-family: 'EB Garamond', serif; font-size: 24px; color: var(--ouro); }
-  #mensagem-ok p { color: #ccc; margin-top: 8px; font-size: 14px; }
-
-  /* RODAPÉ */
-  footer {
-    text-align: center;
-    padding: 24px;
-    font-size: 11.5px;
-    color: #aaa;
-    border-top: 1px solid var(--borda);
-  }
-
-  /* RESPONSIVO */
-  @media (max-width: 560px) {
-    .grupo { grid-template-columns: 1fr; }
-    .grupo.tres { grid-template-columns: 1fr 1fr; }
-    .checklist { grid-template-columns: 1fr; }
-    .secao { padding: 20px 16px; }
-  }
+/* ---------- calculadora ---------- */
+.btn-calc{background:var(--graphite);color:var(--white);width:100%}
+.btn-calc:hover{filter:brightness(1.15)}
+.calc-result{display:none;margin-top:18px;border:1.5px solid var(--gold);border-radius:12px;overflow:hidden}
+.calc-total{background:var(--graphite);color:var(--white);padding:18px 18px 16px;text-align:center}
+.calc-total .rotulo{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.calc-total .valor{font-family:'EB Garamond',serif;font-size:2.3rem;font-weight:700;line-height:1.15;margin-top:4px}
+.calc-linhas{background:var(--white);padding:14px 18px}
+.calc-linha{display:flex;justify-content:space-between;gap:14px;font-size:.87rem;color:var(--stone);padding:7px 0;border-bottom:1px dashed var(--line)}
+.calc-linha:last-child{border-bottom:none}
+.calc-linha b{color:var(--ink);font-weight:600}
+.calc-aviso{background:var(--gold-soft);font-size:.78rem;color:#5C4A2E;padding:12px 18px;line-height:1.6}
+footer{
+  text-align:center;color:var(--stone);font-size:.78rem;
+  padding:34px 20px 10px;line-height:1.7;
+}
+footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphite);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-wrap">
-    <img src="data:image/png;base64,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" alt="David Sitônio Advocacia" class="logo-img">
-  </div>
-  <div class="subtitulo-firma">OAB/PB 13.937 — João Pessoa / Paraíba</div>
-  <div class="titulo-form">Formulário de Entrevista — Caso Trabalhista</div>
-  <p class="instrucao">Preencha com atenção todos os campos que souber. Quanto mais detalhes você fornecer, melhor será a análise do seu caso. Campos com <span style="color:var(--ouro)">★</span> são obrigatórios.</p>
+  <div class="brand">David Sitônio</div>
+  <div class="brand-sub">Advocacia e Consultoria Jurídica</div>
+  <div class="brand-oab">OAB/PB 13.937 — João Pessoa / Paraíba</div>
 </header>
 
-<div class="container">
-  <form id="formulario" novalidate>
+<div class="wrap">
+  <div class="hero">
+    <h1>Formulário de Entrevista — Trabalhadores do Comércio (Grupo Mateus / Novo Atacado)</h1>
+    <p>Se você trabalha ou trabalhou no <b>Mateus Supermercados</b> ou no <b>Novo Atacado</b>, preencha este formulário com calma. Ao longo dele, você vai descobrir direitos previstos na Convenção Coletiva do comércio de João Pessoa que muitas vezes não são pagos. Suas respostas são confidenciais e vão direto para o advogado.</p>
+    <p class="req-note">Campos com <span class="star">★</span> são obrigatórios. Responda o que souber — em caso de dúvida, marque "não sei".</p>
+  </div>
 
-    <!-- 1. DADOS PESSOAIS -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">1</span> Dados Pessoais</div>
+  <form id="frm" novalidate>
 
-      <div class="grupo full">
-        <div class="campo">
-          <label>Nome Completo <span class="obrigatorio">★</span></label>
-          <input type="text" name="nome" placeholder="Seu nome completo" required>
-        </div>
+  <!-- 1 DADOS PESSOAIS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">1</span><h2>Seus dados</h2></div>
+    <div class="field"><label class="q" for="nome">Nome completo <span class="star">★</span></label><input type="text" id="nome" data-k="Nome" required></div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="cpf">CPF</label><input type="tel" id="cpf" data-k="CPF" inputmode="numeric" placeholder="000.000.000-00"></div>
+      <div class="field"><label class="q" for="tel">Telefone / WhatsApp <span class="star">★</span></label><input type="tel" id="tel" data-k="Telefone" required placeholder="(83) 9...."></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="email">E-mail</label><input type="email" id="email" data-k="E-mail"></div>
+      <div class="field"><label class="q" for="bairro">Bairro e cidade onde mora</label><input type="text" id="bairro" data-k="Bairro/cidade"></div>
+    </div>
+  </section>
+
+  <!-- 2 VÍNCULO -->
+  <section>
+    <div class="sec-head"><span class="sec-num">2</span><h2>Seu vínculo com a empresa</h2></div>
+    <div class="field">
+      <label class="q">Qual empresa consta (ou constava) na sua carteira de trabalho? <span class="star">★</span></label>
+      <div class="opts col" data-k="Empresa na CTPS" data-req="1">
+        <label class="opt"><input type="radio" name="empresa" value="Mateus Supermercados e Varejo S.A."><span>Mateus Supermercados e Varejo S.A.</span></label>
+        <label class="opt"><input type="radio" name="empresa" value="Novo Atacado Comercio de Alimentos"><span>Novo Atacado Comercio de Alimentos</span></label>
+        <label class="opt"><input type="radio" name="empresa" value="Comecei em uma e fui transferido(a) para a outra"><span>Comecei em uma e fui transferido(a) para a outra</span></label>
+        <label class="opt"><input type="radio" name="empresa" value="Não sei / outra empresa do grupo"><span>Não sei ao certo / outra empresa do grupo</span></label>
       </div>
-
-      <div class="grupo">
-        <div class="campo">
-          <label>CPF <span class="obrigatorio">★</span></label>
-          <input type="text" name="cpf" placeholder="000.000.000-00" required>
-        </div>
-        <div class="campo">
-          <label>RG</label>
-          <input type="text" name="rg" placeholder="Número do RG">
-        </div>
-      </div>
-
-      <div class="grupo">
-        <div class="campo">
-          <label>Telefone / WhatsApp <span class="obrigatorio">★</span></label>
-          <input type="tel" name="telefone" placeholder="(00) 90000-0000" required>
-        </div>
-        <div class="campo">
-          <label>E-mail</label>
-          <input type="email" name="email" placeholder="seu@email.com">
-        </div>
-      </div>
-
-      <div class="grupo full">
-        <div class="campo">
-          <label>Endereço Completo</label>
-          <input type="text" name="endereco" placeholder="Rua, número, bairro, cidade, estado">
+      <p class="hint">Confira no app "Carteira de Trabalho Digital". Se sua carteira mudou de empresa sem você pedir demissão, isso se chama sucessão empresarial — e as duas empresas respondem pelos seus direitos.</p>
+    </div>
+    <div class="field"><label class="q" for="loja">Em qual loja/unidade você trabalha(va)?</label><input type="text" id="loja" data-k="Loja/unidade" placeholder="Ex.: Hiper do Altiplano, João Pessoa"></div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="funcao">Cargo / função <span class="star">★</span></label><input type="text" id="funcao" data-k="Função" required placeholder="Ex.: operador(a) de caixa, repositor(a)..."></div>
+      <div class="field"><label class="q" for="setor">Setor</label><input type="text" id="setor" data-k="Setor" placeholder="Ex.: frente de loja, açougue, estoque"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="admissao">Data de admissão <span class="star">★</span></label><input type="date" id="admissao" data-k="Admissão" required></div>
+      <div class="field">
+        <label class="q">Ainda trabalha na empresa?</label>
+        <div class="opts" data-k="Ainda trabalha">
+          <label class="opt"><input type="radio" name="ativo" value="Sim, ainda trabalho"><span>Sim</span></label>
+          <label class="opt"><input type="radio" name="ativo" value="Não, já saí"><span>Não, já saí</span></label>
         </div>
       </div>
     </div>
-
-    <!-- 2. DADOS DO EMPREGADOR -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">2</span> Dados do Empregador</div>
-
-      <div class="grupo full">
-        <div class="campo">
-          <label>Nome da Empresa <span class="obrigatorio">★</span></label>
-          <input type="text" name="empresa_nome" placeholder="Razão social ou nome fantasia" required>
-        </div>
-      </div>
-
-      <div class="grupo">
-        <div class="campo">
-          <label>CNPJ / CPF do empregador</label>
-          <input type="text" name="empresa_cnpj" placeholder="00.000.000/0000-00">
-        </div>
-        <div class="campo">
-          <label>Telefone da Empresa</label>
-          <input type="tel" name="empresa_telefone" placeholder="(00) 0000-0000">
-        </div>
-      </div>
-
-      <div class="grupo full">
-        <div class="campo">
-          <label>Endereço da Empresa</label>
-          <input type="text" name="empresa_endereco" placeholder="Rua, número, bairro, cidade, estado">
-        </div>
-      </div>
-
-      <div class="grupo full">
-        <div class="campo">
-          <label>Nome do responsável / dono (se souber)</label>
-          <input type="text" name="responsavel" placeholder="Nome do proprietário ou gerente">
-        </div>
+    <div class="field"><label class="q" for="demissao">Se já saiu: data da saída</label><input type="date" id="demissao" data-k="Data da saída"></div>
+    <div class="field">
+      <label class="q">Se já saiu: como a demissão foi comunicada?</label>
+      <div class="opts" data-k="Como foi a demissão">
+        <label class="opt"><input type="radio" name="comodem" value="Pessoalmente"><span>Pessoalmente</span></label>
+        <label class="opt"><input type="radio" name="comodem" value="WhatsApp"><span>WhatsApp</span></label>
+        <label class="opt"><input type="radio" name="comodem" value="Telefone"><span>Telefone</span></label>
+        <label class="opt"><input type="radio" name="comodem" value="Pedi demissão"><span>Pedi demissão</span></label>
+        <label class="opt"><input type="radio" name="comodem" value="Outra forma"><span>Outra</span></label>
       </div>
     </div>
+  </section>
 
-    <!-- 3. VÍNCULO EMPREGATÍCIO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">3</span> Vínculo Empregatício</div>
-
-      <div class="grupo">
-        <div class="campo">
-          <label>Data de Admissão <span class="obrigatorio">★</span></label>
-          <input type="date" name="admissao" required>
-        </div>
-        <div class="campo">
-          <label>Data de Demissão <span class="obrigatorio">★</span></label>
-          <input type="date" name="demissao" required>
-        </div>
-      </div>
-
-      <div class="grupo full">
-        <div class="campo">
-          <label>Cargo / Função exercida <span class="obrigatorio">★</span></label>
-          <input type="text" name="cargo" placeholder="Ex.: vendedora, caixa, auxiliar administrativa..." required>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>A CTPS (carteira de trabalho) foi assinada? <span class="obrigatorio">★</span></label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="ctps" id="ctps_sim" value="Sim" required>
-          <label class="opcao-label" for="ctps_sim">✔ Sim</label>
-          <input class="opcao-btn" type="radio" name="ctps" id="ctps_nao" value="Não">
-          <label class="opcao-label" for="ctps_nao">✘ Não</label>
-          <input class="opcao-btn" type="radio" name="ctps" id="ctps_nao_sei" value="Não sei">
-          <label class="opcao-label" for="ctps_nao_sei">Não sei</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Já trabalhou nessa mesma empresa antes (recontratação)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="recontratacao" id="rec_sim" value="Sim">
-          <label class="opcao-label" for="rec_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="recontratacao" id="rec_nao" value="Não">
-          <label class="opcao-label" for="rec_nao">Não</label>
-        </div>
+  <!-- 3 SALÁRIO E CCT -->
+  <section>
+    <div class="sec-head"><span class="sec-num">3</span><h2>Salário e pisos da categoria</h2></div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>Desde <b>janeiro de 2026</b>, o piso salarial do comércio na Grande João Pessoa é de <b>R$ 1.700,00</b>. O piso menor (R$ 1.653,00) vale apenas para embaladores, empacotadores, zeladores e serventes. Se sua função é outra e você recebe menos de R$ 1.700, pode haver diferenças a receber.</div>
+    <div class="field"><label class="q" for="salario">Qual o seu salário base atual (ou o último)? <span class="star">★</span></label><input type="text" id="salario" data-k="Salário base" required placeholder="Ex.: R$ 1.653,00"></div>
+    <div class="field">
+      <label class="q">Você trabalha(va) como operador(a) de caixa?</label>
+      <div class="opts" data-k="Trabalha no caixa">
+        <label class="opt"><input type="radio" name="caixa" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="caixa" value="Não"><span>Não</span></label>
       </div>
     </div>
-
-    <!-- 4. REMUNERAÇÃO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">4</span> Remuneração</div>
-
-      <div class="grupo">
-        <div class="campo">
-          <label>Salário mensal recebido <span class="obrigatorio">★</span></label>
-          <input type="text" name="salario" placeholder="R$ 0,00" required>
-        </div>
-        <div class="campo">
-          <label>O salário era pago em dia todo mês?</label>
-          <div class="opcoes">
-            <input class="opcao-btn" type="radio" name="pagamento_dia" id="pd_sim" value="Sim">
-            <label class="opcao-label" for="pd_sim">Sim</label>
-            <input class="opcao-btn" type="radio" name="pagamento_dia" id="pd_nao" value="Não">
-            <label class="opcao-label" for="pd_nao">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>Recebia algum adicional além do salário? (marque todos que se aplicam)</label>
-        <div class="checklist" style="grid-template-columns: 1fr 1fr;">
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Horas extras"> <span>Horas extras</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Adicional noturno"> <span>Adicional noturno</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Insalubridade"> <span>Insalubridade</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Periculosidade"> <span>Periculosidade</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Comissões"> <span>Comissões</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Gorjetas"> <span>Gorjetas</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Prêmios / bônus"> <span>Prêmios / bônus</span></label>
-          <label class="check-item"><input type="checkbox" name="adicionais" value="Nenhum"> <span>Nenhum</span></label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:10px">
-        <label>Recebia holerite (contracheque) todo mês?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="holerite" id="hol_sim" value="Sim">
-          <label class="opcao-label" for="hol_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="holerite" id="hol_nao" value="Não">
-          <label class="opcao-label" for="hol_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="holerite" id="hol_as" value="Às vezes">
-          <label class="opcao-label" for="hol_as">Às vezes</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Benefícios recebidos (marque todos que se aplicam)</label>
-        <div class="checklist">
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Vale-transporte"> <span>Vale-transporte</span></label>
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Vale-refeição / alimentação"> <span>Vale-refeição / alimentação</span></label>
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Plano de saúde"> <span>Plano de saúde</span></label>
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Plano odontológico"> <span>Plano odontológico</span></label>
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Cesta básica"> <span>Cesta básica</span></label>
-          <label class="check-item"><input type="checkbox" name="beneficios" value="Nenhum"> <span>Nenhum</span></label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>O vale-transporte era descontado corretamente (no máximo 6% do salário)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="vt_desconto" id="vt_sim" value="Sim, correto">
-          <label class="opcao-label" for="vt_sim">Sim, correto</label>
-          <input class="opcao-btn" type="radio" name="vt_desconto" id="vt_nao" value="Descontavam mais de 6%">
-          <label class="opcao-label" for="vt_nao">Descontavam mais de 6%</label>
-          <input class="opcao-btn" type="radio" name="vt_desconto" id="vt_na" value="Não recebia VT">
-          <label class="opcao-label" for="vt_na">Não recebia VT</label>
-        </div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>Quem trabalha na função de <b>caixa</b> tem direito à gratificação de <b>quebra de caixa: 8% do piso</b> por mês (cerca de R$ 136), sempre que a empresa descontar diferenças de caixa do funcionário.</div>
+    <div class="field">
+      <label class="q">Se trabalha no caixa: recebe a gratificação de quebra de caixa no holerite?</label>
+      <div class="opts" data-k="Recebe quebra de caixa">
+        <label class="opt"><input type="radio" name="qcaixa" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="qcaixa" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="qcaixa" value="Não sei"><span>Não sei</span></label>
       </div>
     </div>
-
-    <!-- 5. JORNADA DE TRABALHO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">5</span> Jornada de Trabalho</div>
-
-      <div class="grupo tres">
-        <div class="campo">
-          <label>Horário de entrada</label>
-          <input type="text" name="hora_entrada" placeholder="Ex.: 08:00">
-        </div>
-        <div class="campo">
-          <label>Horário de saída</label>
-          <input type="text" name="hora_saida" placeholder="Ex.: 17:00">
-        </div>
-        <div class="campo">
-          <label>Intervalo de almoço</label>
-          <input type="text" name="intervalo" placeholder="Ex.: 1 hora">
-        </div>
-      </div>
-
-      <div class="campo">
-        <label>Cumpria esse horário ou trabalhava além do combinado?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="horario_extra" id="he_nao" value="Cumpria o horário normal">
-          <label class="opcao-label" for="he_nao">Cumpria o horário normal</label>
-          <input class="opcao-btn" type="radio" name="horario_extra" id="he_sim" value="Trabalhava além do horário">
-          <label class="opcao-label" for="he_sim">Trabalhava além do horário</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Se fazia horas extras — eram pagas ou compensadas?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="he_pagamento" id="hep_pago" value="Pagas no holerite">
-          <label class="opcao-label" for="hep_pago">Pagas no holerite</label>
-          <input class="opcao-btn" type="radio" name="he_pagamento" id="hep_banco" value="Banco de horas">
-          <label class="opcao-label" for="hep_banco">Banco de horas</label>
-          <input class="opcao-btn" type="radio" name="he_pagamento" id="hep_nao" value="Não eram pagas nem compensadas">
-          <label class="opcao-label" for="hep_nao">Não eram pagas / compensadas</label>
-          <input class="opcao-btn" type="radio" name="he_pagamento" id="hep_na" value="Não fazia horas extras">
-          <label class="opcao-label" for="hep_na">Não fazia horas extras</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Havia controle de ponto?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="ponto" id="pt_rel" value="Relógio eletrônico">
-          <label class="opcao-label" for="pt_rel">Relógio eletrônico</label>
-          <input class="opcao-btn" type="radio" name="ponto" id="pt_pap" value="Ponto em papel">
-          <label class="opcao-label" for="pt_pap">Ponto em papel</label>
-          <input class="opcao-btn" type="radio" name="ponto" id="pt_app" value="Aplicativo">
-          <label class="opcao-label" for="pt_app">Aplicativo</label>
-          <input class="opcao-btn" type="radio" name="ponto" id="pt_nao" value="Não havia controle">
-          <label class="opcao-label" for="pt_nao">Não havia controle</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Você tem cópia dos registros de ponto?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="copia_ponto" id="cp_sim" value="Sim">
-          <label class="opcao-label" for="cp_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="copia_ponto" id="cp_nao" value="Não">
-          <label class="opcao-label" for="cp_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Trabalhava aos sábados, domingos ou feriados?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="fins_semana" id="fs_nao" value="Não">
-          <label class="opcao-label" for="fs_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="fins_semana" id="fs_sab" value="Sábados">
-          <label class="opcao-label" for="fs_sab">Sábados</label>
-          <input class="opcao-btn" type="radio" name="fins_semana" id="fs_dom" value="Domingos">
-          <label class="opcao-label" for="fs_dom">Domingos</label>
-          <input class="opcao-btn" type="radio" name="fins_semana" id="fs_fer" value="Feriados">
-          <label class="opcao-label" for="fs_fer">Feriados</label>
-          <input class="opcao-btn" type="radio" name="fins_semana" id="fs_todos" value="Sábados, domingos e feriados">
-          <label class="opcao-label" for="fs_todos">Todos</label>
-        </div>
+    <div class="field">
+      <label class="q">A empresa desconta de você diferenças/faltas de dinheiro no caixa?</label>
+      <div class="opts" data-k="Desconto por diferença de caixa">
+        <label class="opt"><input type="radio" name="descaixa" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="descaixa" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="descaixa" value="Não se aplica"><span>Não se aplica</span></label>
       </div>
     </div>
+  </section>
 
-    <!-- 6. FÉRIAS E 13º -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">6</span> Férias e 13º Salário</div>
-
-      <div class="campo">
-        <label>Usufruiu de férias durante o contrato?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="ferias_gozadas" id="fg_sim" value="Sim">
-          <label class="opcao-label" for="fg_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="ferias_gozadas" id="fg_nao" value="Não">
-          <label class="opcao-label" for="fg_nao">Não (trabalhei o tempo todo)</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Se gozou férias — foram pagas corretamente (com o terço adicional)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="ferias_pagas" id="fp_sim" value="Sim">
-          <label class="opcao-label" for="fp_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="ferias_pagas" id="fp_nao" value="Não">
-          <label class="opcao-label" for="fp_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="ferias_pagas" id="fp_nao_sei" value="Não sei">
-          <label class="opcao-label" for="fp_nao_sei">Não sei</label>
-          <input class="opcao-btn" type="radio" name="ferias_pagas" id="fp_na" value="Não se aplica">
-          <label class="opcao-label" for="fp_na">Não se aplica</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Recebeu 13º salário em algum momento do contrato?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="decimo_terceiro" id="dt_sim" value="Sim">
-          <label class="opcao-label" for="dt_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="decimo_terceiro" id="dt_nao" value="Não">
-          <label class="opcao-label" for="dt_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="decimo_terceiro" id="dt_nao_sei" value="Não sei">
-          <label class="opcao-label" for="dt_nao_sei">Não sei</label>
-        </div>
+  <!-- 4 JORNADA / HE / NOTURNO -->
+  <section>
+    <div class="sec-head"><span class="sec-num">4</span><h2>Jornada, horas extras e trabalho noturno</h2></div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="hent">Horário de entrada</label><input type="time" id="hent" data-k="Entrada"></div>
+      <div class="field"><label class="q" for="hsai">Horário real de saída</label><input type="time" id="hsai" data-k="Saída real"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="interv">Tempo de intervalo (almoço/janta)</label><input type="text" id="interv" data-k="Intervalo" placeholder="Ex.: 1 hora"></div>
+      <div class="field"><label class="q" for="diassem">Dias da semana trabalhados</label><input type="text" id="diassem" data-k="Dias trabalhados" placeholder="Ex.: terça a domingo"></div>
+    </div>
+    <div class="field">
+      <label class="q">Você costuma trabalhar além do horário contratado?</label>
+      <div class="opts" data-k="Trabalha além do horário">
+        <label class="opt"><input type="radio" name="he" value="Sim, quase todo dia"><span>Sim, quase todo dia</span></label>
+        <label class="opt"><input type="radio" name="he" value="Às vezes"><span>Às vezes</span></label>
+        <label class="opt"><input type="radio" name="he" value="Não"><span>Não</span></label>
       </div>
     </div>
-
-    <!-- 7. FGTS -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">7</span> FGTS</div>
-
-      <div class="campo">
-        <label>Você tem acesso ao app do FGTS (pela Caixa Econômica)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="app_fgts" id="af_sim" value="Sim">
-          <label class="opcao-label" for="af_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="app_fgts" id="af_nao" value="Não">
-          <label class="opcao-label" for="af_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Se verificou o extrato — os depósitos mensais estão todos corretos?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="fgts_depositos" id="fd_sim" value="Sim, todos depositados">
-          <label class="opcao-label" for="fd_sim">Sim, todos depositados</label>
-          <input class="opcao-btn" type="radio" name="fgts_depositos" id="fd_falta" value="Há meses faltando">
-          <label class="opcao-label" for="fd_falta">Há meses faltando</label>
-          <input class="opcao-btn" type="radio" name="fgts_depositos" id="fd_nao_sei" value="Não verifiquei">
-          <label class="opcao-label" for="fd_nao_sei">Não verifiquei ainda</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Já sacou FGTS anteriormente desta conta?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="fgts_saque" id="fs2_sim" value="Sim">
-          <label class="opcao-label" for="fs2_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="fgts_saque" id="fs2_nao" value="Não">
-          <label class="opcao-label" for="fs2_nao">Não</label>
-        </div>
+    <div class="field"><label class="q" for="qtdhe">Se sim: quanto tempo a mais por dia, em média?</label><input type="text" id="qtdhe" data-k="Tempo extra por dia" placeholder="Ex.: 1 hora e 20 minutos"></div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>Pela Convenção Coletiva, a hora extra no comércio de João Pessoa deve ser paga com adicional de <b>60%</b> — mais do que os 50% da lei. E se no seu contracheque aparecem só alguns minutos ou poucos reais de hora extra por mês, isso é um forte sinal de pagamento a menor.</div>
+    <div class="field">
+      <label class="q">As horas extras aparecem no seu contracheque?</label>
+      <div class="opts col" data-k="Horas extras no holerite">
+        <label class="opt"><input type="radio" name="hepag" value="Sim, em valor que parece correto"><span>Sim, em valor que parece correto</span></label>
+        <label class="opt"><input type="radio" name="hepag" value="Aparecem só alguns minutos / poucos reais"><span>Aparecem só alguns minutos / poucos reais</span></label>
+        <label class="opt"><input type="radio" name="hepag" value="Vão para banco de horas"><span>Vão para banco de horas</span></label>
+        <label class="opt"><input type="radio" name="hepag" value="Não aparecem"><span>Não aparecem</span></label>
       </div>
     </div>
-
-    <!-- 8. A DEMISSÃO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">8</span> A Demissão</div>
-
-      <div class="campo">
-        <label>Como foi comunicada a demissão? <span class="obrigatorio">★</span></label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="forma_demissao" id="fdem_pess" value="Pessoalmente">
-          <label class="opcao-label" for="fdem_pess">Pessoalmente</label>
-          <input class="opcao-btn" type="radio" name="forma_demissao" id="fdem_wpp" value="WhatsApp">
-          <label class="opcao-label" for="fdem_wpp">WhatsApp</label>
-          <input class="opcao-btn" type="radio" name="forma_demissao" id="fdem_tel" value="Telefone">
-          <label class="opcao-label" for="fdem_tel">Telefone</label>
-          <input class="opcao-btn" type="radio" name="forma_demissao" id="fdem_email" value="E-mail">
-          <label class="opcao-label" for="fdem_email">E-mail</label>
-          <input class="opcao-btn" type="radio" name="forma_demissao" id="fdem_outra" value="Outra forma">
-          <label class="opcao-label" for="fdem_outra">Outra forma</label>
-        </div>
+    <div class="field">
+      <label class="q">Você trabalha depois das 22h?</label>
+      <div class="opts" data-k="Trabalha após 22h">
+        <label class="opt"><input type="radio" name="not" value="Sim, todo dia"><span>Sim, todo dia</span></label>
+        <label class="opt"><input type="radio" name="not" value="Às vezes"><span>Às vezes</span></label>
+        <label class="opt"><input type="radio" name="not" value="Não"><span>Não</span></label>
       </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Tem prova da demissão (print de mensagem, testemunha, e-mail)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="prova_demissao" id="pd2_sim" value="Sim">
-          <label class="opcao-label" for="pd2_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="prova_demissao" id="pd2_nao" value="Não">
-          <label class="opcao-label" for="pd2_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Assinou algum documento na demissão?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="doc_demissao" id="dd_sim" value="Sim">
-          <label class="opcao-label" for="dd_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="doc_demissao" id="dd_nao" value="Não">
-          <label class="opcao-label" for="dd_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:10px">
-        <label>Se assinou — tem cópia do que assinou?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="copia_doc" id="cd_sim" value="Sim">
-          <label class="opcao-label" for="cd_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="copia_doc" id="cd_nao" value="Não">
-          <label class="opcao-label" for="cd_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="copia_doc" id="cd_na" value="Não assinei nada">
-          <label class="opcao-label" for="cd_na">Não assinei nada</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Os R$ 1.200,00 foram pagos de que forma?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="forma_pgto" id="fp2_pix" value="Pix / transferência">
-          <label class="opcao-label" for="fp2_pix">Pix / transferência</label>
-          <input class="opcao-btn" type="radio" name="forma_pgto" id="fp2_din" value="Dinheiro em espécie">
-          <label class="opcao-label" for="fp2_din">Dinheiro</label>
-          <input class="opcao-btn" type="radio" name="forma_pgto" id="fp2_dep" value="Depósito bancário">
-          <label class="opcao-label" for="fp2_dep">Depósito bancário</label>
-          <input class="opcao-btn" type="radio" name="forma_pgto" id="fp2_cheq" value="Cheque">
-          <label class="opcao-label" for="fp2_cheq">Cheque</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Tem comprovante desse pagamento?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="comp_pgto" id="cp2_sim" value="Sim">
-          <label class="opcao-label" for="cp2_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="comp_pgto" id="cp2_nao" value="Não">
-          <label class="opcao-label" for="cp2_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>O empregador entregou as guias do seguro-desemprego (CD/SD)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="guias_sd" id="gsd_sim" value="Sim">
-          <label class="opcao-label" for="gsd_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="guias_sd" id="gsd_nao" value="Não">
-          <label class="opcao-label" for="gsd_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="guias_sd" id="gsd_nao_sei" value="Não sei o que é isso">
-          <label class="opcao-label" for="gsd_nao_sei">Não sei o que é isso</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>A baixa já foi dada na CTPS?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="baixa_ctps" id="bc_sim" value="Sim">
-          <label class="opcao-label" for="bc_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="baixa_ctps" id="bc_nao" value="Não">
-          <label class="opcao-label" for="bc_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="baixa_ctps" id="bc_nao_sei" value="Não sei">
-          <label class="opcao-label" for="bc_nao_sei">Não sei</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Foi ao sindicato ou ao Ministério do Trabalho para homologar a rescisão?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="homologacao" id="hom_sim" value="Sim">
-          <label class="opcao-label" for="hom_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="homologacao" id="hom_nao" value="Não">
-          <label class="opcao-label" for="hom_nao">Não</label>
-        </div>
+      <p class="hint">O trabalho após as 22h dá direito a adicional noturno de 20% e, além disso, cada hora noturna conta como se fosse menor (52min30s) — o que gera ainda mais horas extras.</p>
+    </div>
+    <div class="field">
+      <label class="q">Como é feito o controle de ponto?</label>
+      <div class="opts" data-k="Controle de ponto">
+        <label class="opt"><input type="radio" name="ponto" value="Relógio eletrônico"><span>Relógio eletrônico</span></label>
+        <label class="opt"><input type="radio" name="ponto" value="Aplicativo"><span>Aplicativo</span></label>
+        <label class="opt"><input type="radio" name="ponto" value="Papel"><span>Papel</span></label>
+        <label class="opt"><input type="radio" name="ponto" value="Não há controle"><span>Não há</span></label>
       </div>
     </div>
-
-    <!-- 9. SEGURO-DESEMPREGO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">9</span> Seguro-Desemprego</div>
-
-      <div class="campo">
-        <label>Já deu entrada no seguro-desemprego?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="sd_entrada" id="sde_sim" value="Sim">
-          <label class="opcao-label" for="sde_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="sd_entrada" id="sde_nao" value="Não">
-          <label class="opcao-label" for="sde_nao">Não</label>
-        </div>
+    <div class="field">
+      <label class="q">Você tem prints ou fotos do espelho de ponto (as telas do sistema com seus horários)?</label>
+      <div class="opts" data-k="Tem prints do ponto">
+        <label class="opt"><input type="radio" name="printponto" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="printponto" value="Não, mas consigo tirar"><span>Não, mas consigo tirar</span></label>
+        <label class="opt"><input type="radio" name="printponto" value="Não tenho acesso"><span>Não tenho acesso</span></label>
       </div>
+      <p class="hint">Dica: enquanto você ainda tem acesso ao sistema/aplicativo, fotografe seus registros de ponto e guarde seus contracheques. Após a demissão, a empresa costuma cortar o acesso.</p>
+    </div>
+  </section>
 
-      <div class="campo" style="margin-top:12px">
-        <label>Recebeu seguro-desemprego nos últimos 16 meses (de outro emprego)?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="sd_anterior" id="sda_sim" value="Sim">
-          <label class="opcao-label" for="sda_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="sd_anterior" id="sda_nao" value="Não">
-          <label class="opcao-label" for="sda_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Tem alguma outra fonte de renda formal no momento?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="outra_renda" id="or_sim" value="Sim">
-          <label class="opcao-label" for="or_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="outra_renda" id="or_nao" value="Não">
-          <label class="opcao-label" for="or_nao">Não</label>
-        </div>
+  <!-- 5 DOMINGOS, FERIADOS E FOLGAS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">5</span><h2>Domingos, feriados e folgas</h2></div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>A Convenção Coletiva garante uma indenização de <b>R$ 67,00 por cada domingo ou feriado trabalhado</b> (a rubrica "Bonificação Domingos Trabalhados" do holerite), além da folga de compensação. Se você trabalha 3 ou 4 domingos no mês e a bonificação aparece só uma vez, há diferenças a receber.</div>
+    <div class="field"><label class="q" for="qdom">Quantos domingos por mês você trabalha, em média?</label><input type="text" id="qdom" data-k="Domingos por mês" placeholder="Ex.: 3"></div>
+    <div class="field">
+      <label class="q">A bonificação de R$ 67 aparece no holerite para TODOS os domingos/feriados trabalhados?</label>
+      <div class="opts" data-k="Recebe R$67 por domingo/feriado">
+        <label class="opt"><input type="radio" name="bonif" value="Sim, todos"><span>Sim, todos</span></label>
+        <label class="opt"><input type="radio" name="bonif" value="Só alguns"><span>Só alguns</span></label>
+        <label class="opt"><input type="radio" name="bonif" value="Nunca recebi"><span>Nunca recebi</span></label>
+        <label class="opt"><input type="radio" name="bonif" value="Não sei"><span>Não sei</span></label>
       </div>
     </div>
-
-    <!-- 10. CONDIÇÕES DE TRABALHO -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">10</span> Condições de Trabalho</div>
-
-      <div class="campo">
-        <label>Sofreu assédio moral, humilhações ou situações constrangedoras no trabalho?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="assedio" id="ass_sim" value="Sim">
-          <label class="opcao-label" for="ass_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="assedio" id="ass_nao" value="Não">
-          <label class="opcao-label" for="ass_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Se sim — descreva brevemente o que aconteceu:</label>
-        <textarea name="assedio_descricao" placeholder="Descreva as situações de assédio ou constrangimento..."></textarea>
-      </div>
-
-      <div class="campo" style="margin-top:4px">
-        <label>Sofreu acidente de trabalho ou adoeceu por causa do trabalho?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="acidente" id="ac_sim" value="Sim">
-          <label class="opcao-label" for="ac_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="acidente" id="ac_nao" value="Não">
-          <label class="opcao-label" for="ac_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Estava de atestado médico ou afastada pelo INSS em algum momento?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="atestado" id="at_sim" value="Sim">
-          <label class="opcao-label" for="at_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="atestado" id="at_nao" value="Não">
-          <label class="opcao-label" for="at_nao">Não</label>
-        </div>
-      </div>
-
-      <div class="campo" style="margin-top:12px">
-        <label>Há outros funcionários na mesma situação que possam ser testemunhas?</label>
-        <div class="opcoes">
-          <input class="opcao-btn" type="radio" name="testemunhas" id="ts_sim" value="Sim">
-          <label class="opcao-label" for="ts_sim">Sim</label>
-          <input class="opcao-btn" type="radio" name="testemunhas" id="ts_nao" value="Não">
-          <label class="opcao-label" for="ts_nao">Não</label>
-          <input class="opcao-btn" type="radio" name="testemunhas" id="ts_talvez" value="Talvez">
-          <label class="opcao-label" for="ts_talvez">Talvez</label>
-        </div>
+    <div class="field"><label class="q" for="folgadia">Qual é o seu dia fixo de folga na semana?</label><input type="text" id="folgadia" data-k="Dia de folga" placeholder="Ex.: segunda-feira"></div>
+    <div class="field">
+      <label class="q">Alguma folga sua ou feriado já foi lançado no sistema como FALTA?</label>
+      <div class="opts" data-k="Folga/feriado lançado como falta">
+        <label class="opt"><input type="radio" name="folgafalta" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="folgafalta" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="folgafalta" value="Não sei"><span>Não sei</span></label>
       </div>
     </div>
-
-    <!-- 11. DOCUMENTOS -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">11</span> Documentos Disponíveis</div>
-
-      <div class="aviso">
-        Marque apenas os documentos que você <strong>já possui</strong> em mãos ou tem acesso imediato.
+    <div class="field">
+      <label class="q">Se sim: houve desconto no seu contracheque por causa dessas "faltas"?</label>
+      <div class="opts" data-k="Desconto por falsa falta">
+        <label class="opt"><input type="radio" name="descfalta" value="Sim, e nunca devolveram"><span>Sim, e nunca devolveram</span></label>
+        <label class="opt"><input type="radio" name="descfalta" value="Sim, mas devolveram depois"><span>Sim, mas devolveram</span></label>
+        <label class="opt"><input type="radio" name="descfalta" value="Não"><span>Não</span></label>
       </div>
+      <p class="hint">Se você reclamou por WhatsApp ou e-mail, guarde os prints — eles são prova importante.</p>
+    </div>
+  </section>
 
-      <div class="checklist">
-        <label class="check-item"><input type="checkbox" name="docs" value="CTPS física ou digital"> <span>CTPS (física ou digital)</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Holerites / contracheques"> <span>Holerites / contracheques</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Comprovante dos R$ 1.200,00"> <span>Comprovante dos R$ 1.200,00</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Extrato FGTS"> <span>Extrato do FGTS</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Prints de conversas (WhatsApp/e-mail)"> <span>Prints de conversa (WhatsApp/e-mail)</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Documentos assinados na demissão"> <span>Documentos assinados na demissão</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Guias CD/SD do seguro-desemprego"> <span>Guias CD/SD do seguro-desemprego</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Contrato de trabalho escrito"> <span>Contrato de trabalho escrito</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Registros de ponto"> <span>Registros de ponto</span></label>
-        <label class="check-item"><input type="checkbox" name="docs" value="Atestados médicos"> <span>Atestados médicos (se houver)</span></label>
+  <!-- 6 BENEFÍCIOS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">6</span><h2>Benefícios: alimentação, transporte e outros</h2></div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>A Convenção Coletiva obriga a empresa a fornecer <b>vale-alimentação de no mínimo R$ 12,00 por dia trabalhado</b> (em cartão ou tíquete), a menos que ela sirva refeição no local. Também prevê <b>plano odontológico pago pela empresa</b> e limita o desconto do vale-transporte a no máximo <b>6% do salário</b>.</div>
+    <div class="field">
+      <label class="q">Você recebe vale-alimentação (cartão/tíquete de R$ 12 ou mais por dia)?</label>
+      <div class="opts col" data-k="Vale-alimentação">
+        <label class="opt"><input type="radio" name="va" value="Sim, recebo em cartão/tíquete"><span>Sim, recebo em cartão/tíquete</span></label>
+        <label class="opt"><input type="radio" name="va" value="Não, mas a empresa fornece refeição no local"><span>Não, mas a empresa fornece refeição no local</span></label>
+        <label class="opt"><input type="radio" name="va" value="Não recebo nada disso"><span>Não recebo nada disso</span></label>
       </div>
     </div>
-
-    <!-- 12. INFORMAÇÕES ADICIONAIS -->
-    <div class="secao">
-      <div class="secao-titulo"><span class="secao-numero">12</span> Informações Adicionais</div>
-
-      <div class="campo">
-        <label>Há algo mais que queira contar sobre o seu caso?</label>
-        <textarea name="obs_gerais" rows="5" placeholder="Descreva qualquer detalhe adicional que possa ser importante para a análise do seu caso..."></textarea>
+    <div class="field">
+      <label class="q">Quanto é descontado de vale-transporte no seu contracheque?</label>
+      <div class="opts col" data-k="Desconto de VT">
+        <label class="opt"><input type="radio" name="vt" value="Até 6% do salário (correto)"><span>Até 6% do salário (correto)</span></label>
+        <label class="opt"><input type="radio" name="vt" value="Mais de 6% do salário"><span>Mais de 6% do salário</span></label>
+        <label class="opt"><input type="radio" name="vt" value="Não uso VT"><span>Não uso VT</span></label>
+        <label class="opt"><input type="radio" name="vt" value="Não sei"><span>Não sei</span></label>
       </div>
-
-      <div class="campo" style="margin-top:8px">
-        <label>Qual a melhor forma e horário para o advogado entrar em contato com você?</label>
-        <input type="text" name="contato_preferencia" placeholder="Ex.: WhatsApp às tardes, após as 17h">
+      <p class="hint">Referência: para salário de R$ 1.700, o desconto máximo é R$ 102 por mês.</p>
+    </div>
+    <div class="field">
+      <label class="q">Outros benefícios que você recebe (marque todos)</label>
+      <div class="opts" data-k="Benefícios" data-multi="1">
+        <label class="opt"><input type="checkbox" name="benef" value="Plano de saúde"><span>Plano de saúde</span></label>
+        <label class="opt"><input type="checkbox" name="benef" value="Plano odontológico"><span>Plano odontológico</span></label>
+        <label class="opt"><input type="checkbox" name="benef" value="Cesta básica"><span>Cesta básica</span></label>
+        <label class="opt"><input type="checkbox" name="benef" value="Salário-família"><span>Salário-família</span></label>
+        <label class="opt"><input type="checkbox" name="benef" value="Nenhum"><span>Nenhum</span></label>
       </div>
     </div>
-
-    <div class="botao-wrap">
-      <button type="submit">Enviar Formulário ao Advogado</button>
+    <div class="field">
+      <label class="q">Você recebe o contracheque (holerite) todo mês e tem acesso ao sistema para baixá-lo?</label>
+      <div class="opts" data-k="Acesso aos holerites">
+        <label class="opt"><input type="radio" name="hol" value="Sim, tenho acesso"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="hol" value="Às vezes"><span>Às vezes</span></label>
+        <label class="opt"><input type="radio" name="hol" value="Não / perdi o acesso"><span>Não / perdi o acesso</span></label>
+      </div>
     </div>
+  </section>
 
+  <!-- 7 FÉRIAS / 13º -->
+  <section>
+    <div class="sec-head"><span class="sec-num">7</span><h2>Férias e 13º salário</h2></div>
+    <div class="field">
+      <label class="q">Você já tirou férias durante o contrato?</label>
+      <div class="opts" data-k="Tirou férias">
+        <label class="opt"><input type="radio" name="ferias" value="Sim, pagas corretamente (com 1/3)"><span>Sim, pagas com 1/3</span></label>
+        <label class="opt"><input type="radio" name="ferias" value="Sim, mas acho que pagaram errado"><span>Sim, mas pagaram errado</span></label>
+        <label class="opt"><input type="radio" name="ferias" value="Nunca tirei"><span>Nunca tirei</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">O 13º salário foi pago corretamente?</label>
+      <div class="opts" data-k="13º salário">
+        <label class="opt"><input type="radio" name="dec" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="dec" value="Não / pago a menor"><span>Não / a menor</span></label>
+        <label class="opt"><input type="radio" name="dec" value="Não sei"><span>Não sei</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 FGTS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">8</span><h2>FGTS</h2></div>
+    <div class="field">
+      <label class="q">Você tem o aplicativo do FGTS (Caixa) no celular?</label>
+      <div class="opts" data-k="Tem app FGTS">
+        <label class="opt"><input type="radio" name="appfgts" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="appfgts" value="Não"><span>Não</span></label>
+      </div>
+      <p class="hint">Se não tem, baixe o app "FGTS" — o extrato é a prova mais fácil de conseguir e revela meses sem depósito ou depósitos a menor.</p>
+    </div>
+    <div class="field">
+      <label class="q">Pelo extrato, os depósitos mensais (8% do salário) estão corretos?</label>
+      <div class="opts col" data-k="Depósitos de FGTS">
+        <label class="opt"><input type="radio" name="fgts" value="Sim, todos e no valor certo"><span>Sim, todos e no valor certo</span></label>
+        <label class="opt"><input type="radio" name="fgts" value="Há meses faltando"><span>Há meses faltando</span></label>
+        <label class="opt"><input type="radio" name="fgts" value="Há meses com valor muito baixo"><span>Há meses com valor muito baixo</span></label>
+        <label class="opt"><input type="radio" name="fgts" value="Ainda não verifiquei"><span>Ainda não verifiquei</span></label>
+      </div>
+      <p class="hint">Depósito normal para salário de R$ 1.700 é cerca de R$ 136 por mês. Valores muito menores indicam descontos indevidos ou base errada.</p>
+    </div>
+  </section>
+
+  <!-- 9 RESCISÃO -->
+  <section>
+    <div class="sec-head"><span class="sec-num">9</span><h2>Rescisão <span style="font-size:.8rem;color:var(--stone);font-weight:400">(responda apenas se já saiu da empresa)</span></h2></div>
+    <div class="field">
+      <label class="q">Você recebeu as verbas rescisórias em até 10 dias corridos após a saída?</label>
+      <div class="opts col" data-k="Rescisão paga em 10 dias">
+        <label class="opt"><input type="radio" name="resc10" value="Sim, tudo no prazo"><span>Sim, tudo no prazo</span></label>
+        <label class="opt"><input type="radio" name="resc10" value="Recebi só uma parte"><span>Recebi só uma parte</span></label>
+        <label class="opt"><input type="radio" name="resc10" value="Não recebi nada"><span>Não recebi nada</span></label>
+        <label class="opt"><input type="radio" name="resc10" value="Recebi, mas fora do prazo"><span>Recebi fora do prazo</span></label>
+      </div>
+      <p class="hint">O atraso gera multa de um salário a seu favor (art. 477 da CLT).</p>
+    </div>
+    <div class="field"><label class="q" for="valresc">Quanto você recebeu na rescisão (valor aproximado) e a que título disseram que era?</label><input type="text" id="valresc" data-k="Valor recebido na rescisão" placeholder="Ex.: R$ 1.200, disseram que era aviso prévio"></div>
+    <div class="field">
+      <label class="q">Na rescisão, a empresa deixou você conferir os documentos com calma (TRCT, guias)?</label>
+      <div class="opts col" data-k="Conferência da rescisão">
+        <label class="opt"><input type="radio" name="conf" value="Sim, conferi e recebi cópia"><span>Sim, conferi e recebi cópia</span></label>
+        <label class="opt"><input type="radio" name="conf" value="Assinei sem conseguir conferir direito"><span>Assinei sem conseguir conferir direito</span></label>
+        <label class="opt"><input type="radio" name="conf" value="Fui impedido(a) de fotografar/levar os documentos"><span>Fui impedido(a) de fotografar/levar os documentos</span></label>
+        <label class="opt"><input type="radio" name="conf" value="Recusei-me a assinar"><span>Recusei-me a assinar</span></label>
+        <label class="opt"><input type="radio" name="conf" value="Ainda não houve reunião de rescisão"><span>Ainda não houve reunião</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Após a demissão, seu acesso ao sistema de holerites foi cortado?</label>
+      <div class="opts" data-k="Acesso cortado após demissão">
+        <label class="opt"><input type="radio" name="corte" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="corte" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="corte" value="Não se aplica"><span>Não se aplica</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Entregaram as guias do seguro-desemprego e o extrato para saque do FGTS?</label>
+      <div class="opts" data-k="Guias entregues">
+        <label class="opt"><input type="radio" name="guias" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="guias" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="guias" value="Não sei o que é isso"><span>Não sei o que é isso</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 AMBIENTE -->
+  <section>
+    <div class="sec-head"><span class="sec-num">10</span><h2>Condições de trabalho</h2></div>
+    <div class="field">
+      <label class="q">Sofreu assédio moral, humilhações, cobranças abusivas ou situações constrangedoras?</label>
+      <div class="opts" data-k="Assédio moral">
+        <label class="opt"><input type="radio" name="assedio" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="assedio" value="Não"><span>Não</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q" for="assediodesc">Se sim, conte brevemente o que aconteceu:</label><textarea id="assediodesc" data-k="Relato de assédio"></textarea></div>
+    <div class="field">
+      <label class="q">Sofreu acidente de trabalho ou adoeceu por causa do trabalho?</label>
+      <div class="opts" data-k="Acidente/doença">
+        <label class="opt"><input type="radio" name="acid" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="acid" value="Não"><span>Não</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Durante o contrato, você ficou afastado(a) do trabalho por mais de 15 dias?</label>
+      <div class="opts col" data-k="Afastamento durante o contrato">
+        <label class="opt"><input type="radio" name="afast" value="Sim, por doença comum"><span>Sim, por doença comum</span></label>
+        <label class="opt"><input type="radio" name="afast" value="Sim, por acidente/doença do trabalho"><span>Sim, por acidente ou doença do trabalho</span></label>
+        <label class="opt"><input type="radio" name="afast" value="Sim, por licença-maternidade"><span>Sim, por licença-maternidade</span></label>
+        <label class="opt"><input type="radio" name="afast" value="Não"><span>Não</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Se ficou afastado(a): recebeu benefício do INSS nesse período?</label>
+      <div class="opts" data-k="Recebeu benefício do INSS">
+        <label class="opt"><input type="radio" name="inss" value="Sim, auxílio-doença comum (B31)"><span>Sim, auxílio-doença</span></label>
+        <label class="opt"><input type="radio" name="inss" value="Sim, auxílio acidentário (B91)"><span>Sim, auxílio acidentário</span></label>
+        <label class="opt"><input type="radio" name="inss" value="Sim, salário-maternidade"><span>Sim, salário-maternidade</span></label>
+        <label class="opt"><input type="radio" name="inss" value="Não recebi nada"><span>Não recebi nada</span></label>
+        <label class="opt"><input type="radio" name="inss" value="Não sei"><span>Não sei</span></label>
+      </div>
+      <p class="hint">Se pediu o benefício e o INSS negou (ou ficou sem receber nem da empresa nem do INSS), informe no relato final — essa situação, chamada de "limbo previdenciário", também gera direitos.</p>
+    </div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>A <b>gestante</b> tem estabilidade no emprego desde a confirmação da gravidez até <b>5 meses após o parto — e mais 90 dias</b>, garantidos pela Convenção Coletiva do comércio de João Pessoa. Quem sofre <b>acidente de trabalho</b> tem estabilidade de <b>12 meses</b> após voltar do INSS. Demissão nesses períodos pode gerar reintegração ou indenização de todo o período.</div>
+    <div class="field">
+      <label class="q">Você estava grávida, em licença-maternidade ou de volta há pouco tempo de um afastamento quando foi demitida(o)?</label>
+      <div class="opts col" data-k="Demissão em período de estabilidade">
+        <label class="opt"><input type="radio" name="estab" value="Sim, estava grávida ou a menos de 5 meses do parto"><span>Sim — grávida ou a menos de 5 meses do parto</span></label>
+        <label class="opt"><input type="radio" name="estab" value="Sim, há menos de 12 meses do retorno de afastamento acidentário"><span>Sim — há menos de 12 meses do retorno de afastamento por acidente</span></label>
+        <label class="opt"><input type="radio" name="estab" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="estab" value="Não se aplica / ainda trabalho"><span>Não se aplica / ainda trabalho</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Conhece colegas na mesma situação que poderiam ser testemunhas?</label>
+      <div class="opts" data-k="Testemunhas">
+        <label class="opt"><input type="radio" name="test" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="test" value="Talvez"><span>Talvez</span></label>
+        <label class="opt"><input type="radio" name="test" value="Não"><span>Não</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 DOCUMENTOS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">11</span><h2>Documentos que você já tem</h2></div>
+    <p class="sec-desc">Marque apenas o que você possui em mãos ou consegue acessar agora.</p>
+    <div class="opts" data-k="Documentos disponíveis" data-multi="1">
+      <label class="opt"><input type="checkbox" name="docs" value="CTPS digital (app)"><span>CTPS digital (app)</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Contracheques/holerites"><span>Contracheques</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Extrato do FGTS"><span>Extrato do FGTS</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Prints do espelho de ponto"><span>Prints do ponto</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Conversas de WhatsApp com a empresa"><span>Conversas de WhatsApp</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="TRCT/documentos da rescisão"><span>Documentos da rescisão</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Guias do seguro-desemprego"><span>Guias seguro-desemprego</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Atestados médicos"><span>Atestados médicos</span></label>
+      <label class="opt"><input type="checkbox" name="docs" value="Comprovante de residência em meu nome"><span>Comprovante de residência em meu nome</span></label>
+    </div>
+  </section>
+
+  <!-- 12 CALCULADORA -->
+  <section id="sec-calc">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Calculadora: quanto você pode ter a receber?</h2></div>
+    <p class="sec-desc">Com base nas suas respostas, esta calculadora faz uma estimativa preliminar dos seus possíveis créditos. Confira os campos abaixo (alguns já foram preenchidos automaticamente) e toque em calcular.</p>
+    <div class="grid2">
+      <div class="field"><label class="q" for="c_sal">Salário base mensal (R$)</label><input type="text" id="c_sal" inputmode="decimal" placeholder="Ex.: 1653"></div>
+      <div class="field"><label class="q" for="c_meses">Meses trabalhados</label><input type="text" id="c_meses" inputmode="numeric" placeholder="Ex.: 7"></div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label class="q" for="c_he">Tempo extra por dia, em média</label>
+        <select id="c_he">
+          <option value="0">Não faço hora extra</option>
+          <option value="30">Cerca de 30 minutos</option>
+          <option value="60">Cerca de 1 hora</option>
+          <option value="80" selected>Cerca de 1h20</option>
+          <option value="120">2 horas ou mais</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="q" for="c_dias">Dias trabalhados por semana</label>
+        <select id="c_dias">
+          <option value="5">5 dias</option>
+          <option value="6" selected>6 dias</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label class="q" for="c_dom">Domingos/feriados trabalhados SEM receber os R$ 67 (por mês)</label><input type="text" id="c_dom" inputmode="numeric" placeholder="Ex.: 3"></div>
+      <div class="field"><label class="q" for="c_desc">Dias descontados indevidamente (folga/feriado como falta)</label><input type="text" id="c_desc" inputmode="numeric" placeholder="Ex.: 4"></div>
+    </div>
+    <div class="actions" style="margin-top:4px">
+      <button type="button" class="btn-calc" id="btncalc">Calcular estimativa</button>
+    </div>
+    <div class="calc-result" id="calcbox">
+      <div class="calc-total">
+        <div class="rotulo">Estimativa preliminar dos seus créditos</div>
+        <div class="valor" id="calctotal">R$ 0,00</div>
+      </div>
+      <div class="calc-linhas" id="calclinhas"></div>
+      <div class="calc-aviso"><b>Importante:</b> este valor é apenas uma estimativa automática e aproximada, calculada a partir das suas próprias respostas. Não é promessa de resultado nem parecer jurídico. O valor real depende dos documentos, das provas e da decisão da Justiça — e será apurado pelo advogado na análise do seu caso.</div>
+    </div>
+  </section>
+
+  <!-- 13 FINAIS -->
+  <section>
+    <div class="sec-head"><span class="sec-num">13</span><h2>Para finalizar</h2></div>
+    <div class="field"><label class="q" for="relato">Quer contar mais alguma coisa sobre o seu caso?</label><textarea id="relato" data-k="Relato adicional"></textarea></div>
+    <div class="field"><label class="q" for="contato">Melhor horário para o advogado falar com você:</label><input type="text" id="contato" data-k="Melhor horário de contato" placeholder="Ex.: depois das 18h, pelo WhatsApp"></div>
+
+    <label class="consent">
+      <input type="checkbox" id="lgpd">
+      <span>Autorizo o envio destas informações ao escritório <b>David Sitônio Advocacia</b> exclusivamente para análise jurídica do meu caso, de forma confidencial, nos termos da LGPD. <span class="star">★</span></span>
+    </label>
+
+    <p class="msg-erro" id="erro">Preencha os campos obrigatórios (★) e marque a autorização acima.</p>
+    <p class="msg-ok" id="okmsg">Respostas copiadas! Cole na conversa do WhatsApp com o advogado.</p>
+
+    <div class="actions">
+      <button type="button" class="btn-wa" id="btnwa">Enviar respostas pelo WhatsApp</button>
+      <button type="button" class="btn-copy" id="btncopy">Copiar respostas (se o WhatsApp não abrir)</button>
+    </div>
+  </section>
   </form>
 
-  <div id="mensagem-ok">
-    <div class="icone">✔</div>
-    <h2>Formulário enviado com sucesso!</h2>
-    <p>Dr. David Sitônio receberá suas informações e entrará em contato em breve.</p>
-    <p style="margin-top:16px; font-size:12px; color:#888;">David Sitônio Advocacia — OAB/PB 13.937 · (83) 98729-3304</p>
-  </div>
+  <footer>
+    <b>DAVID SITÔNIO — ADVOCACIA E CONSULTORIA JURÍDICA</b><br>
+    OAB/PB 13.937 · João Pessoa/PB · david_sitonio@hotmail.com · (83) 98729-3304<br>
+    Este formulário é confidencial e destinado exclusivamente à coleta de informações para fins jurídicos.<br>
+    Nenhuma resposta fica gravada nesta página: os dados só são enviados quando você toca no botão acima.
+  </footer>
 </div>
 
-<footer>
-  David Sitônio Advocacia e Consultoria Jurídica · OAB/PB 13.937 · João Pessoa/PB<br>
-  david_sitonio@hotmail.com · (83) 98729-3304<br>
-  Este formulário é confidencial e destinado exclusivamente à coleta de informações para fins jurídicos.
-</footer>
-
 <script>
-  // Coleta todos os dados e formata como texto para envio via WhatsApp
-  document.getElementById('formulario').addEventListener('submit', function(e) {
-    e.preventDefault();
+(function(){
+  var WA = "5583987293304";
+  var estimativa = null; // {total, linhas:[[nome,valor],...]}
 
-    const form = e.target;
-    const data = new FormData(form);
-    const linhas = [];
+  function num(v){
+    if(!v) return 0;
+    v = String(v).replace(/[^\d,\.]/g,"").replace(/\.(?=\d{3}(\D|$))/g,"").replace(",",".");
+    var n = parseFloat(v);
+    return isNaN(n) ? 0 : n;
+  }
+  function br(n){ return "R$ " + n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  function radio(name){ var s=document.querySelector('input[name="'+name+'"]:checked'); return s?s.value:""; }
 
-    // Campos simples
-    const campos = {
-      nome: 'Nome',
-      cpf: 'CPF',
-      rg: 'RG',
-      telefone: 'Telefone',
-      email: 'E-mail',
-      endereco: 'Endereço',
-      empresa_nome: 'Empresa',
-      empresa_cnpj: 'CNPJ/CPF Empresa',
-      empresa_telefone: 'Tel. Empresa',
-      empresa_endereco: 'End. Empresa',
-      responsavel: 'Responsável',
-      admissao: 'Data Admissão',
-      demissao: 'Data Demissão',
-      cargo: 'Cargo/Função',
-      ctps: 'CTPS Assinada',
-      recontratacao: 'Recontratação',
-      salario: 'Salário',
-      pagamento_dia: 'Pagamento em Dia',
-      holerite: 'Holerite',
-      vt_desconto: 'Desconto VT',
-      hora_entrada: 'Entrada',
-      hora_saida: 'Saída',
-      intervalo: 'Intervalo',
-      horario_extra: 'Horas Extras',
-      he_pagamento: 'Pagamento HE',
-      ponto: 'Controle de Ponto',
-      copia_ponto: 'Cópia do Ponto',
-      fins_semana: 'Fins de Semana/Feriados',
-      ferias_gozadas: 'Férias Gozadas',
-      ferias_pagas: 'Férias Pagas Corretamente',
-      decimo_terceiro: '13º Salário',
-      app_fgts: 'App FGTS',
-      fgts_depositos: 'Depósitos FGTS',
-      fgts_saque: 'Saque FGTS Anterior',
-      forma_demissao: 'Como foi Demitida',
-      prova_demissao: 'Prova da Demissão',
-      doc_demissao: 'Assinou Documentos',
-      copia_doc: 'Cópia dos Documentos',
-      forma_pgto: 'Forma do Pagamento R$1.200',
-      comp_pgto: 'Comprovante Pagamento',
-      guias_sd: 'Guias CD/SD',
-      baixa_ctps: 'Baixa na CTPS',
-      homologacao: 'Homologação Rescisão',
-      sd_entrada: 'Deu Entrada SD',
-      sd_anterior: 'SD Anterior (16 meses)',
-      outra_renda: 'Outra Renda Formal',
-      assedio: 'Assédio Moral',
-      assedio_descricao: 'Descrição Assédio',
-      acidente: 'Acidente de Trabalho',
-      atestado: 'Atestado/INSS',
-      testemunhas: 'Testemunhas',
-      obs_gerais: 'Observações Gerais',
-      contato_preferencia: 'Preferência de Contato'
-    };
+  function mesesEntre(d1,d2){
+    if(!d1) return 0;
+    var a=new Date(d1), b=d2?new Date(d2):new Date();
+    var m=(b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth());
+    return Math.max(m,1);
+  }
 
-    linhas.push('📋 *FORMULÁRIO TRABALHISTA — DAVID SITÔNIO ADVOCACIA*\n');
+  // pré-preenche a calculadora com respostas já dadas
+  function prefill(){
+    var s=document.getElementById("salario").value; if(s) document.getElementById("c_sal").value=s;
+    var adm=document.getElementById("admissao").value, dem=document.getElementById("demissao").value;
+    if(adm) document.getElementById("c_meses").value = mesesEntre(adm, dem||null);
+    var dom=document.getElementById("qdom").value; if(dom) document.getElementById("c_dom").value=dom;
+  }
+  ["salario","admissao","demissao","qdom"].forEach(function(id){
+    document.getElementById(id).addEventListener("change", prefill);
+  });
 
-    for (const [key, label] of Object.entries(campos)) {
-      const val = data.get(key);
-      if (val && val.trim()) {
-        linhas.push(`*${label}:* ${val}`);
-      }
+  function calcular(){
+    prefillIfEmpty();
+    var sal   = num(document.getElementById("c_sal").value) || 1700;
+    var meses = num(document.getElementById("c_meses").value) || 1;
+    meses = Math.min(meses, 60); // limite prescricional aproximado
+    var minHE = num(document.getElementById("c_he").value);
+    var dias  = num(document.getElementById("c_dias").value) || 6;
+    var domNP = num(document.getElementById("c_dom").value);
+    var dDesc = num(document.getElementById("c_desc").value);
+    var hora  = sal/220;
+    var linhas = [];
+
+    // Horas extras (adicional CCT 60%) + reflexos estimados (~30%)
+    if(minHE>0){
+      var heMes = (minHE/60)*dias*4.33*hora*1.6;
+      var he = heMes*meses*1.3;
+      linhas.push(["Horas extras (60%) + reflexos", he]);
+    }
+    // Adicional noturno (após 22h) + hora reduzida
+    var notResp = radio("not");
+    if(notResp==="Sim, todo dia" || notResp==="Às vezes"){
+      var fator = notResp==="Às vezes" ? 0.4 : 1;
+      var notMes = 36*hora*0.2*fator; // ~36h noturnas fictas/mês
+      linhas.push(["Adicional noturno + reflexos", notMes*meses*1.3]);
+    }
+    // Diferença de piso (R$ 1.700 Grande JP desde jan/2026)
+    if(sal>0 && sal<1700){
+      linhas.push(["Diferença do piso salarial (R$ 1.700)", (1700-sal)*meses*1.25]);
+    }
+    // Domingos/feriados sem a bonificação de R$ 67
+    if(domNP>0){ linhas.push(["Domingos/feriados não pagos (R$ 67)", domNP*67*meses]); }
+    // Descontos indevidos
+    if(dDesc>0){ linhas.push(["Devolução de descontos indevidos", dDesc*(sal/30)*1.2]); }
+    // Vale-alimentação nunca fornecido
+    if(radio("va")==="Não recebo nada disso"){
+      linhas.push(["Vale-alimentação (R$ 12/dia)", 22*12*meses]);
+    }
+    // Rescisão em aberto (só para quem já saiu)
+    var r10 = radio("resc10");
+    if(radio("ativo")==="Não, já saí" && r10 && r10!=="Sim, tudo no prazo"){
+      var resc = sal                       // aviso prévio
+               + (meses%12||12)/12*sal      // 13º proporcional
+               + (meses%12||12)/12*sal*1.3333; // férias prop. + 1/3
+      if(r10==="Recebi só uma parte") resc = resc*0.5;
+      linhas.push(["Verbas rescisórias em aberto (aprox.)", resc]);
+      linhas.push(["Multa do art. 477 (atraso na rescisão)", sal]);
     }
 
-    // Checkboxes múltiplos
-    const adicionais = data.getAll('adicionais');
-    if (adicionais.length) linhas.push(`*Adicionais Recebidos:* ${adicionais.join(', ')}`);
+    var total = linhas.reduce(function(t,l){return t+l[1];},0);
+    estimativa = {total: total, linhas: linhas};
 
-    const beneficios = data.getAll('beneficios');
-    if (beneficios.length) linhas.push(`*Benefícios:* ${beneficios.join(', ')}`);
+    var box=document.getElementById("calcbox");
+    var cont=document.getElementById("calclinhas");
+    cont.innerHTML="";
+    if(!linhas.length){
+      cont.innerHTML='<div class="calc-linha"><span>Com as respostas informadas, não foi possível estimar créditos. Preencha os campos acima ou envie o formulário mesmo assim — o advogado fará a análise completa.</span></div>';
+    } else {
+      linhas.forEach(function(l){
+        var d=document.createElement("div"); d.className="calc-linha";
+        d.innerHTML="<span>"+l[0]+"</span><b>"+br(l[1])+"</b>";
+        cont.appendChild(d);
+      });
+    }
+    document.getElementById("calctotal").textContent = br(total);
+    box.style.display="block";
+    box.scrollIntoView({block:"center"});
+  }
 
-    const docs = data.getAll('docs');
-    if (docs.length) linhas.push(`*Documentos Disponíveis:* ${docs.join(', ')}`);
+  function prefillIfEmpty(){
+    if(!document.getElementById("c_sal").value) prefill();
+    if(!document.getElementById("c_meses").value) prefill();
+  }
 
-    const texto = linhas.join('\n');
-    const numero = '5583987293304'; // ← Substitua pelo número do WhatsApp do escritório
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  document.getElementById("btncalc").addEventListener("click", calcular);
 
-    // Abre o WhatsApp com os dados preenchidos
-    window.open(url, '_blank');
+  function grupoValor(g){
+    var multi = g.getAttribute("data-multi") === "1";
+    var sel = g.querySelectorAll("input:checked");
+    if(!sel.length) return "";
+    if(multi){ return Array.prototype.map.call(sel, function(i){return i.value;}).join(", "); }
+    return sel[0].value;
+  }
 
-    // Mostra mensagem de sucesso
-    form.style.display = 'none';
-    document.getElementById('mensagem-ok').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  function montar(){
+    var linhas = [];
+    linhas.push("*ENTREVISTA TRABALHISTA — GRUPO MATEUS/NOVO ATACADO*");
+    linhas.push("_(enviado pelo formulário do site)_");
+    document.querySelectorAll("#frm section").forEach(function(sec){
+      var titulo = sec.querySelector(".sec-head h2").textContent.replace(/\(responda.*\)/i,"").trim();
+      var bloco = [];
+      sec.querySelectorAll("input[type=text],input[type=tel],input[type=email],input[type=date],input[type=time],textarea").forEach(function(inp){
+        if(inp.getAttribute("data-k") && inp.value.trim()) bloco.push("• " + inp.getAttribute("data-k") + ": " + inp.value.trim());
+      });
+      sec.querySelectorAll(".opts[data-k]").forEach(function(g){
+        var v = grupoValor(g);
+        if(v) bloco.push("• " + g.getAttribute("data-k") + ": " + v);
+      });
+      if(bloco.length){ linhas.push(""); linhas.push("*" + titulo.toUpperCase() + "*"); linhas = linhas.concat(bloco); }
+    });
+    if(estimativa && estimativa.linhas.length){
+      linhas.push("");
+      linhas.push("*ESTIMATIVA CALCULADA NO FORMULÁRIO*");
+      estimativa.linhas.forEach(function(l){ linhas.push("• " + l[0] + ": " + br(l[1])); });
+      linhas.push("• *TOTAL ESTIMADO: " + br(estimativa.total) + "*");
+      linhas.push("_(estimativa automática e preliminar — sujeita à análise do advogado)_");
+    }
+    return linhas.join("\n");
+  }
+
+  function valido(){
+    var ok = true;
+    ["nome","tel","funcao","admissao","salario"].forEach(function(id){
+      var el = document.getElementById(id);
+      el.style.borderColor = "";
+      if(!el.value.trim()){ el.style.borderColor = "#B3352B"; ok = false; }
+    });
+    var emp = document.querySelector(".opts[data-req] input:checked");
+    if(!emp) ok = false;
+    if(!document.getElementById("lgpd").checked) ok = false;
+    document.getElementById("erro").style.display = ok ? "none" : "block";
+    if(!ok) document.getElementById("erro").scrollIntoView({block:"center"});
+    return ok;
+  }
+
+  document.getElementById("btnwa").addEventListener("click", function(){
+    if(!valido()) return;
+    var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(montar());
+    window.open(url, "_blank");
   });
-</script>
 
+  document.getElementById("btncopy").addEventListener("click", function(){
+    if(!valido()) return;
+    var texto = montar();
+    function feito(){ var m=document.getElementById("okmsg"); m.style.display="block"; setTimeout(function(){m.style.display="none";},4000); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(texto).then(feito, function(){ fallback(texto); feito(); });
+    } else { fallback(texto); feito(); }
+    function fallback(t){
+      var ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta);
+      ta.select(); try{document.execCommand("copy");}catch(e){} document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
 </body>
 </html>
