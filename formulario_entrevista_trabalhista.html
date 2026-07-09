@@ -69,6 +69,24 @@ header{
 }
 .hero p{color:var(--stone);font-size:.95rem;margin-top:10px}
 .hero .req-note{margin-top:12px;font-size:.85rem;color:var(--stone)}
+
+/* ---------- botão flutuante de dúvidas ---------- */
+.duvida-fab{
+  position:fixed;right:16px;bottom:18px;z-index:99;
+  display:flex;align-items:center;gap:10px;
+  background:#25D366;color:var(--white);
+  border-radius:99px;padding:12px 18px 12px 14px;
+  font-weight:700;font-size:.9rem;text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.28);
+  transition:transform .12s ease, filter .15s ease;
+}
+.duvida-fab:hover{filter:brightness(1.05);transform:translateY(-2px)}
+.duvida-fab svg{width:24px;height:24px;flex-shrink:0}
+.duvida-fab .fab-txt small{display:block;font-weight:500;font-size:.68rem;opacity:.92}
+@media(max-width:560px){
+  .duvida-fab{padding:12px 15px 12px 13px}
+  .duvida-fab .fab-txt{font-size:.82rem}
+}
 .star{color:var(--gold);font-weight:700}
 
 /* ---------- sections ---------- */
@@ -226,7 +244,7 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
   <div class="hero">
     <h1>Formulário de Entrevista — Trabalhadores do Comércio (Grupo Mateus / Novo Atacado)</h1>
     <p>Se você trabalha ou trabalhou no <b>Mateus Supermercados</b> ou no <b>Novo Atacado</b>, preencha este formulário com calma. Ao longo dele, você vai descobrir direitos previstos na Convenção Coletiva do comércio de João Pessoa que muitas vezes não são pagos. Suas respostas são confidenciais e vão direto para o advogado.</p>
-    <p class="req-note">Campos com <span class="star">★</span> são obrigatórios. Responda o que souber — em caso de dúvida, marque "não sei".</p>
+    <p class="req-note">Campos com <span class="star">★</span> são obrigatórios. Responda o que souber — em caso de dúvida, marque "não sei" <b>ou toque no botão verde no canto da tela para falar direto com o advogado</b>.</p>
   </div>
 
   <form id="frm" novalidate>
@@ -862,5 +880,10 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
   });
 })();
 </script>
+<a class="duvida-fab" target="_blank" rel="noopener"
+   href="https://wa.me/5583987293304?text=Ol%C3%A1%2C%20Dr.%20David!%20Estou%20preenchendo%20o%20formul%C3%A1rio%20trabalhista%20e%20tenho%20uma%20d%C3%BAvida.">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2.9C8.8 2.9 3 8.7 3 15.9c0 2.3.6 4.5 1.7 6.4L3 29.1l7-1.7c1.8 1 3.9 1.6 6 1.6 7.2 0 13-5.8 13-13S23.2 2.9 16 2.9zm0 23.7c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1 1.1-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6 0-5.9 4.8-10.7 10.7-10.7s10.7 4.8 10.7 10.7-4.8 10.7-10.7 10.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.8-1-2.4-.3-.6-.5-.5-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/></svg>
+  <span class="fab-txt">Ficou com dúvida?<small>Fale agora com o advogado</small></span>
+</a>
 </body>
 </html>
