@@ -74,18 +74,20 @@ header{
 .duvida-fab{
   position:fixed;right:16px;bottom:18px;z-index:99;
   display:flex;align-items:center;gap:10px;
-  background:#25D366;color:var(--white);
+  background:var(--graphite);color:var(--white);
+  border:1.5px solid var(--gold);
   border-radius:99px;padding:12px 18px 12px 14px;
-  font-weight:700;font-size:.9rem;text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,.28);
+  font-family:'EB Garamond',serif;
+  font-weight:700;font-size:.98rem;letter-spacing:.02em;text-decoration:none;
+  box-shadow:0 6px 18px rgba(38,34,30,.35);
   transition:transform .12s ease, filter .15s ease;
 }
-.duvida-fab:hover{filter:brightness(1.05);transform:translateY(-2px)}
-.duvida-fab svg{width:24px;height:24px;flex-shrink:0}
-.duvida-fab .fab-txt small{display:block;font-weight:500;font-size:.68rem;opacity:.92}
+.duvida-fab:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.duvida-fab svg{width:24px;height:24px;flex-shrink:0;color:var(--gold)}
+.duvida-fab .fab-txt small{display:block;font-family:'Inter',system-ui,sans-serif;font-weight:500;font-size:.66rem;letter-spacing:.04em;color:var(--gold)}
 @media(max-width:560px){
   .duvida-fab{padding:12px 15px 12px 13px}
-  .duvida-fab .fab-txt{font-size:.82rem}
+  .duvida-fab .fab-txt{font-size:.88rem}
 }
 .star{color:var(--gold);font-weight:700}
 
@@ -301,6 +303,17 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
         <label class="opt"><input type="radio" name="comodem" value="Pedi demissão"><span>Pedi demissão</span></label>
         <label class="opt"><input type="radio" name="comodem" value="Outra forma"><span>Outra</span></label>
       </div>
+    </div>
+    <div class="field">
+      <label class="q">Se já saiu: qual foi o tipo de saída?</label>
+      <div class="opts col" data-k="Tipo de saída">
+        <label class="opt"><input type="radio" name="tiposaida" value="Sem justa causa"><span>Demitido(a) SEM justa causa</span></label>
+        <label class="opt"><input type="radio" name="tiposaida" value="Com justa causa"><span>Demitido(a) COM justa causa</span></label>
+        <label class="opt"><input type="radio" name="tiposaida" value="Pedi demissão"><span>Pedi demissão</span></label>
+        <label class="opt"><input type="radio" name="tiposaida" value="Acordo entre as partes"><span>Acordo entre as partes</span></label>
+        <label class="opt"><input type="radio" name="tiposaida" value="Não sei"><span>Não sei</span></label>
+      </div>
+      <p class="hint">A demissão sem justa causa garante aviso prévio, multa de 40% do FGTS, saque do FGTS e seguro-desemprego. E atenção: justa causa aplicada de forma injusta ou sem prova pode ser revertida na Justiça — se for o seu caso, conte o que aconteceu no relato final.</p>
     </div>
   </section>
 
@@ -559,6 +572,30 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
   <!-- 10 AMBIENTE -->
   <section>
     <div class="sec-head"><span class="sec-num">10</span><h2>Condições de trabalho</h2></div>
+    <div class="direito"><span class="tag">Você sabia?</span><br>Trabalhar em <b>câmara fria, açougue, padaria (forno), com produtos químicos ou umidade constante</b> pode gerar <b>adicional de insalubridade</b> (10% a 40% do salário-mínimo). Já o contato com <b>inflamáveis, energia elétrica ou o uso de moto no trabalho</b> pode gerar <b>adicional de periculosidade de 30% do salário</b>. Esses adicionais são confirmados por perícia na Justiça.</div>
+    <div class="field">
+      <label class="q">Você trabalha(va) exposto(a) a alguma destas condições? (marque todas)</label>
+      <div class="opts" data-k="Condições insalubres/perigosas" data-multi="1">
+        <label class="opt"><input type="checkbox" name="insal" value="Câmara fria / frigorífico"><span>Câmara fria / frigorífico</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Açougue / peixaria (frio e umidade)"><span>Açougue / peixaria</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Padaria / forno (calor)"><span>Padaria / forno (calor)</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Produtos químicos de limpeza"><span>Produtos químicos de limpeza</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Umidade constante"><span>Umidade constante</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Inflamáveis (gás/combustível)"><span>Inflamáveis (gás/combustível)</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Energia elétrica"><span>Energia elétrica</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Moto no trabalho"><span>Moto no trabalho</span></label>
+        <label class="opt"><input type="checkbox" name="insal" value="Nenhuma"><span>Nenhuma</span></label>
+      </div>
+    </div>
+    <div class="field">
+      <label class="q">Se marcou alguma condição: recebe adicional de insalubridade ou periculosidade no holerite?</label>
+      <div class="opts" data-k="Recebe adicional de insalubridade/periculosidade">
+        <label class="opt"><input type="radio" name="adicip" value="Sim"><span>Sim</span></label>
+        <label class="opt"><input type="radio" name="adicip" value="Não"><span>Não</span></label>
+        <label class="opt"><input type="radio" name="adicip" value="Não sei"><span>Não sei</span></label>
+      </div>
+      <p class="hint">A empresa fornece EPIs (luvas, japona térmica, botas)? Se fornece, informe no relato final — isso influencia a análise.</p>
+    </div>
     <div class="field">
       <label class="q">Sofreu assédio moral, humilhações, cobranças abusivas ou situações constrangedoras?</label>
       <div class="opts" data-k="Assédio moral">
@@ -662,6 +699,20 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
       <div class="field"><label class="q" for="c_dom">Domingos/feriados trabalhados SEM receber os R$ 67 (por mês)</label><input type="text" id="c_dom" inputmode="numeric" placeholder="Ex.: 3"></div>
       <div class="field"><label class="q" for="c_desc">Dias descontados indevidamente (folga/feriado como falta)</label><input type="text" id="c_desc" inputmode="numeric" placeholder="Ex.: 4"></div>
     </div>
+    <div class="field">
+      <label class="q" for="c_fgts">Meses com FGTS faltando ou depositado a menor (veja no app FGTS)</label>
+      <input type="text" id="c_fgts" inputmode="numeric" placeholder="Ex.: 3">
+      <p class="hint">Se a saída foi sem justa causa, a multa de 40% sobre o FGTS em falta é somada automaticamente ao cálculo.</p>
+    </div>
+    <div class="field">
+      <label class="q" for="c_insal">Trabalhou exposto a condição insalubre ou perigosa SEM receber o adicional?</label>
+      <select id="c_insal">
+        <option value="0" selected>Não / não se aplica</option>
+        <option value="insal">Sim — frio, calor, químicos ou umidade (insalubridade)</option>
+        <option value="peric">Sim — inflamáveis, eletricidade ou moto (periculosidade)</option>
+      </select>
+      <p class="hint">Estimativa em grau médio (20% do salário-mínimo) para insalubridade e 30% do salário para periculosidade. O valor exato depende de perícia técnica na Justiça.</p>
+    </div>
     <div class="actions" style="margin-top:4px">
       <button type="button" class="btn-calc" id="btncalc">Calcular estimativa</button>
     </div>
@@ -671,7 +722,7 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
         <div class="valor" id="calctotal">R$ 0,00</div>
       </div>
       <div class="calc-linhas" id="calclinhas"></div>
-      <div class="calc-aviso"><b>Importante:</b> este valor é apenas uma estimativa automática e aproximada, calculada a partir das suas próprias respostas. Não é promessa de resultado nem parecer jurídico. O valor real depende dos documentos, das provas e da decisão da Justiça — e será apurado pelo advogado na análise do seu caso.</div>
+      <div class="calc-aviso"><b>Importante:</b> este valor é uma estimativa automática, aproximada e <b>propositalmente conservadora</b> — a análise completa do advogado costuma identificar outras verbas não incluídas aqui, como reflexos adicionais, multas legais, estabilidades e indenização por danos morais. Não é promessa de resultado nem parecer jurídico: o valor real depende dos documentos, das provas e da decisão da Justiça.</div>
     </div>
   </section>
 
@@ -745,6 +796,9 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
     var dias  = num(document.getElementById("c_dias").value) || 6;
     var domNP = num(document.getElementById("c_dom").value);
     var dDesc = num(document.getElementById("c_desc").value);
+    var mFgts = num(document.getElementById("c_fgts").value);
+    var saida = radio("tiposaida");
+    var semJC = (saida==="Sem justa causa" || saida==="Não sei" || saida==="");
     var hora  = sal/220;
     var linhas = [];
 
@@ -773,15 +827,35 @@ footer b{font-family:'EB Garamond',serif;letter-spacing:.14em;color:var(--graphi
     if(radio("va")==="Não recebo nada disso"){
       linhas.push(["Vale-alimentação (R$ 12/dia)", 22*12*meses]);
     }
+    // FGTS não depositado ou a menor + multa de 40%
+    if(mFgts>0){
+      var fgtsFalt = sal*0.08*mFgts;
+      linhas.push(["FGTS não depositado ou a menor (8%)", fgtsFalt]);
+      if(semJC){ linhas.push(["Multa de 40% sobre o FGTS em falta", fgtsFalt*0.4]); }
+    }
+    // Insalubridade (grau médio, 20% do salário-mínimo) ou periculosidade (30% do salário)
+    var SM = 1621; // salário-mínimo 2026 (Decreto 12.797/2025)
+    var cInsal = document.getElementById("c_insal").value;
+    if(cInsal==="insal"){
+      linhas.push(["Adicional de insalubridade (20% do SM) + reflexos", SM*0.20*meses*1.3]);
+    } else if(cInsal==="peric"){
+      linhas.push(["Adicional de periculosidade (30%) + reflexos", sal*0.30*meses*1.3]);
+    }
     // Rescisão em aberto (só para quem já saiu)
     var r10 = radio("resc10");
-    if(radio("ativo")==="Não, já saí" && r10 && r10!=="Sim, tudo no prazo"){
-      var resc = sal                       // aviso prévio
-               + (meses%12||12)/12*sal      // 13º proporcional
-               + (meses%12||12)/12*sal*1.3333; // férias prop. + 1/3
+    if(radio("ativo")==="Não, já saí" && r10 && r10!=="Sim, tudo no prazo" && saida!=="Com justa causa"){
+      var prop = (meses%12||12)/12;
+      var resc = prop*sal            // 13º proporcional
+               + prop*sal*1.3333;    // férias proporcionais + 1/3
+      if(semJC){ resc += sal; }      // aviso prévio (só sem justa causa)
       if(r10==="Recebi só uma parte") resc = resc*0.5;
       linhas.push(["Verbas rescisórias em aberto (aprox.)", resc]);
       linhas.push(["Multa do art. 477 (atraso na rescisão)", sal]);
+      linhas.push(["Multa do art. 467 (50% sobre o incontroverso)", resc*0.5]);
+      if(semJC){
+        // multa de 40% sobre o FGTS de todo o contrato, quando não comprovado o pagamento
+        linhas.push(["Multa de 40% do FGTS (se não paga/paga a menor)", sal*0.08*meses*0.4]);
+      }
     }
 
     var total = linhas.reduce(function(t,l){return t+l[1];},0);
